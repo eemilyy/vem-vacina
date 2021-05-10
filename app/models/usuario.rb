@@ -8,6 +8,5 @@ class Usuario < ApplicationRecord
     validates :nome_mae, presence: true, length: {minimum:10}
     validates :email, presence: true
     validates :telefone, presence: true, length: {minimum:8}
-    validates :data_nascimento
 
 end
