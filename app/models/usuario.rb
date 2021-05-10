@@ -11,4 +11,6 @@ class Usuario < ApplicationRecord
 
     attr_accessor :cpf, :usuario_id
 
+    has_many :vacinas
+
 end
