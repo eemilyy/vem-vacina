@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_031241) do
+ActiveRecord::Schema.define(version: 2021_05_10_033418) do
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "nome_completo", default: "", null: false
+    t.date "data_nascimento", null: false
+    t.string "cpf", default: "", null: false
+    t.string "nome_mae", default: "", null: false
+    t.string "telefone", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "password_digest", default: "", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "vacinas", force: :cascade do |t|
     t.string "nome_vacina"
