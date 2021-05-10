@@ -1,7 +1,11 @@
 class UsuariosController < ApplicationController
+    before_action :require_logged_in, only:[:edit, :upadte]
 
     def new
         @usuario = Usuario.new
+    end
+
+    def show
     end
 
     def create
@@ -12,6 +16,18 @@ class UsuariosController < ApplicationController
             redirect_to root_path
         else
             render 'new'
+        end
+    end
+
+    def edit
+    end
+
+    def update
+        if current_usuario.update(usuario_params)
+            flash[:success] = "Dados atualizados"
+            redirect_to vacinas_path
+        else
+            render 'edit'
         end
     end
 

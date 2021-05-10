@@ -1,9 +1,10 @@
 class VacinasController < ApplicationController
+  before_action :require_logged_in
   before_action :set_vacina, only: %i[ show edit update destroy ]
 
   # GET /vacinas or /vacinas.json
   def index
-    @vacinas = Vacina.all
+    @vacinas = current_usuario.vacinas
   end
 
   # GET /vacinas/1 or /vacinas/1.json
@@ -21,7 +22,7 @@ class VacinasController < ApplicationController
 
   # POST /vacinas or /vacinas.json
   def create
-    @vacina = Vacina.new(vacina_params)
+    @vacina = current_usuario.vacinas.build(vacina_params)
 
     respond_to do |format|
       if @vacina.save
@@ -59,7 +60,7 @@ class VacinasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vacina
-      @vacina = Vacina.find(params[:id])
+      @vacina = current_usuario.vacinas.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

@@ -1,3 +1,33 @@
-<h2>OLá <%= current_usuario.nome_completo %></h2>
+<h2>Vizualização de dados</h2>
 
-<%= link_to "Sair", sair_path, method: :delete %>
+<p>
+  <strong>Nome Completo:</strong>
+  <%= current_usuario.nome_completo %>
+</p>
+
+<p>
+  <strong>Nascimento:</strong>
+  <%= current_usuario.data_nascimento %>
+</p>
+
+<p>
+  <strong>Nome da mãe:</strong>
+  <%= current_usuario.nome_mae %>
+</p>
+
+<p>
+  <strong>CPF:</strong>
+  <%= current_usuario.cpf %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= current_usuario.telefone %>
+</p>
+
+<p>
+  <strong>E-mail:</strong>
+  <%= current_usuario.email %>
+</p>
+
+<%= link_to 'Voltar', vacinas_path(current_usuario)%>
