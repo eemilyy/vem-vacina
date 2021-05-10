@@ -7,7 +7,7 @@ class CreateUsuarios < ActiveRecord::Migration[6.1]
       t.string :nome_mae, null:false, default: ''
       t.string :telefone, null:false, default: ''
       t.string :email, null:false, default: ''
-      t.string :password_digest, null:false, default: ''
+      t.string :password_digest, null:false
 
       t.timestamps
     end

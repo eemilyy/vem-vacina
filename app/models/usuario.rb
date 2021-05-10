@@ -9,4 +9,6 @@ class Usuario < ApplicationRecord
     validates :email, presence: true
     validates :telefone, presence: true, length: {minimum:8}
 
+    attr_accessor :cpf, :usuario_id
+
 end

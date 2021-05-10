@@ -9,7 +9,7 @@ class UsuariosController < ApplicationController
 
         if @usuario.save
             flash[:success] = "Cadastrado com Sucesso"
-            redirect_to new_usuario_path
+            redirect_to root_path
         else
             render 'new'
         end
