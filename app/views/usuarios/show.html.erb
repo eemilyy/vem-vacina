@@ -30,5 +30,14 @@
   <%= current_usuario.email %>
 </p>
 
+<% if current_usuario.endereco == nil %>
+  <h3><%=link_to 'Inserir/Editar Endereço', new_endereco_path(current_usuario) %></h3><br>
+<% else %>
+  <h3><%=link_to 'Inserir/Editar Endereço', enderecoEdit_path(current_usuario) %></h3><br>
+  
+<% end %>
+  
 
-<%= link_to 'Voltar', vacinas_path(current_usuario)%>
+
+
+<h2><%= link_to 'Ver Agendamentos', vacinas_path(current_usuario)%></h2>

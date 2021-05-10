@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 2021_05_10_085233) do
     t.string "nome_mae", default: "", null: false
     t.string "telefone", default: "", null: false
     t.string "email", default: "", null: false
-    t.string "password_digest", default: "", null: false
+    t.string "password_digest", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "vacinas", force: :cascade do |t|
-    t.string "nome_vacina"
-    t.text "localizacao"
-    t.date "data"
-    t.time "horario"
+    t.string "nome_vacina", null: false
+    t.text "localizacao", null: false
+    t.date "data", null: false
+    t.time "horario", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "usuario_id", null: false

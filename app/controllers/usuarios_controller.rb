@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-    before_action :require_logged_in, only:[:edit, :upadte]
+    before_action :require_logged_in, only:[:edit, :update]
 
     def new
         @usuario = Usuario.new
