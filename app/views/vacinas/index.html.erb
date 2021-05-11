@@ -2,10 +2,10 @@
 
 <h2>Olá, <%= current_usuario.nome_completo %></h2>
 
-<%= link_to 'Vizualizar', current_usuario%>
+<%= link_to 'Vizualizar', current_usuario%> |
 <%= link_to 'Editar dados', edit_usuario_path(current_usuario)%>
+<hr>
 
-<br><br><br>
 <h1>Agendamento Vacinas</h1>
 
 <table>
@@ -33,9 +33,6 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
 <%= link_to 'New Vacina', new_vacina_path %><br><br><br>
-
+<hr><hr>
 <%= link_to "Sair", sair_path, method: :delete %>

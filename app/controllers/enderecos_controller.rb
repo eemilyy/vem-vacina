@@ -22,6 +22,15 @@ class EnderecosController < ApplicationController
     def edit
     end
 
+    def update
+        if current_usuario.endereco.update(endereco_params)
+            flash[:success] = "Dados atualizados"
+            redirect_to usuario_path
+        else
+            render 'edit'
+        end
+    end
+
     private
         def set_endereco
             @endereco = current_usuario.endereco

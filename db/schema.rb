@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2021_05_10_085233) do
 
   create_table "enderecos", force: :cascade do |t|
-    t.string "cep"
-    t.string "cidade"
-    t.string "bairro"
-    t.string "logradouro"
+    t.string "cep", null: false
+    t.string "cidade", null: false
+    t.string "bairro", null: false
+    t.string "logradouro", null: false
     t.string "complemento"
     t.integer "usuario_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_085233) do
     t.string "nome_vacina", null: false
     t.text "localizacao", null: false
     t.date "data", null: false
-    t.time "horario", null: false
+    t.datetime "horario", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "usuario_id", null: false
