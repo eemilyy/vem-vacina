@@ -8,7 +8,7 @@ class Usuario < ApplicationRecord
 
     validates :nome_completo, presence: true, length: {minimum:10}, numericality: false
     validates_date :data_nascimento, timeliness: {on_or_before: lambda { Date.current }, type: :date}   
-    validates :cpf, presence: true, uniqueness: true, numericality: { only_integer: true }
+    validates :cpf, presence: true, uniqueness: true, length: {is: 11}, numericality: { only_integer: true }
     validates :nome_mae, presence: true, length: {minimum:10}, numericality: false
     validates :email, presence: true, length:{maximum: 255}, format:{with: VALID_EMAIL_REGEX}, uniqueness:{case_sensitive: true}
     validates :telefone, presence: true, length: {minimum:8}, numericality: { only_integer: true }
