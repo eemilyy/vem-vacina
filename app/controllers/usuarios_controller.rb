@@ -3,6 +3,7 @@ class UsuariosController < ApplicationController
 
     def new
         @usuario = Usuario.new
+        @usuario.build_endereco
     end
 
     def show
@@ -33,6 +34,6 @@ class UsuariosController < ApplicationController
 
     private
         def usuario_params
-            params.require(:usuario).permit(:nome_completo, :data_nascimento, :nome_mae, :cpf, :telefone, :email, :password, :password_confirmation)
+            params.require(:usuario).permit(:nome_completo, :data_nascimento, :nome_mae, :cpf, :telefone, :email, :password, {:endereco_attributes => [:id, :cep, :cidade, :bairro, :logradouro, :complemento]})
         end
 end

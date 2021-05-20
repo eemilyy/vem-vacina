@@ -12,9 +12,9 @@ class Usuario < ApplicationRecord
     validates_numericality_of :cpf, uniqueness: true
     validates_numericality_of :telefone, presence: true, length: {minimum:8}
 
-    #attr_accessor :cpf, :usuario_id
-
     has_many :vacinas
     has_one :endereco
+
+    accepts_nested_attributes_for :endereco, update_only: true
 
 end

@@ -25,47 +25,38 @@
   <%= current_usuario.telefone %>
 </p>
 
-<% if current_usuario.endereco %>
-  <p>
-    <strong>CEP</strong>
-    <%= current_usuario.endereco.cep %>
-  </p>
+<p>
+  <strong>CEP:</strong>
+  <%= current_usuario.endereco.cep %>
+</p>
 
-  <p>
-    <strong>Cidade</strong>
-    <%= current_usuario.endereco.cidade %>
-  </p>
+<p>
+  <strong>Cidade:</strong>
+  <%= current_usuario.endereco.cidade %>
+</p>
 
-  <p>
-    <strong>Bairro</strong>
-    <%= current_usuario.endereco.bairro %>
-  </p>
+<p>
+  <strong>Bairro:</strong>
+  <%= current_usuario.endereco.bairro %>
+</p>
 
-  <p>
-    <strong>Logradouro</strong>
-    <%= current_usuario.endereco.logradouro %>
-  </p>
+<p>
+  <strong>Logradouro:</strong>
+  <%= current_usuario.endereco.logradouro %>
+</p>
 
-  <p>
-    <strong>Completo</strong>
-    <%= current_usuario.endereco.complemento %>
-  </p>
-
-<% else %>
-  <h1><%=link_to 'Inserir Endereço', new_endereco_path(current_usuario) %></h1>
-<% end %>
+<p>
+  <strong>Completo:</strong>
+  <%= current_usuario.endereco.complemento %>
+</p>
 
 <p>
   <strong>E-mail:</strong>
   <%= current_usuario.email %>
 </p>
 
-<% if current_usuario.endereco != nil %>  
-  <h3><%=link_to 'Editar Endereço', edit_endereco_path(current_usuario) %></h3>
-<% end %>
-<h3><%= link_to 'Editar dados', edit_usuario_path(current_usuario)%><h3>
-  
 
+<%= link_to 'Editar dados', edit_usuario_path(current_usuario)%>
 <hr>
 
 <h2><%= link_to 'Ver Agendamentos', vacinas_path(current_usuario)%></h2>

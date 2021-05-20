@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'sair', to: 'sessions#destroy'
-  #get 'enderecoEdit', to: 'enderecos#edit'
   
   resources :vacinas
   resources :usuarios, only: [:new, :create, :show, :edit, :update]
