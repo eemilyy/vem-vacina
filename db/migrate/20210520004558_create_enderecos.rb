@@ -6,7 +6,7 @@ class CreateEnderecos < ActiveRecord::Migration[6.1]
       t.string :bairro
       t.string :logradouro
       t.string :complemento
-      t.references :usuario, null: false, foreign_key: true
+      t.references :usuario, foreign_key: true
 
       t.timestamps
     end

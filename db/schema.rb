@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_004558) do
     t.string "bairro"
     t.string "logradouro"
     t.string "complemento"
-    t.integer "usuario_id", null: false
+    t.integer "usuario_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["usuario_id"], name: "index_enderecos_on_usuario_id"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_004558) do
     t.datetime "horario", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "usuario_id", null: false
+    t.integer "usuario_id"
     t.index ["usuario_id"], name: "index_vacinas_on_usuario_id"
   end
 
