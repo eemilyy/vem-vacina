@@ -22,3 +22,11 @@ Feature: Vacinas
     When eu preencho o Nome Vacina '1', Localizacao '2', a Data '12'/'June'/'2021' e o Horario '13':'30'
     And clico no botao de 'Create Vacina'
     Then vejo uma mensagem de erro informando os campos que estao incorretos
+
+  Scenario: editar dados do agendamento de uma vacina com campos Nome Vacina e Localizacao vazios
+    Given eu estou logado no sistema Vem Vacina e dentro de Agendamento Vacinas
+    And procuro manualmente na pagina de Agendamento Vacinas o nome da vacina e encontro 'COVID-19'
+    When clico na opcao de editar o agendamento da vacina 'COVID-19'
+    And eu preencho o Nome Vacina '', Localizacao '', a Data '12'/'June'/'2021' e o Horario '13':'30'
+    When clico no botao de 'Update Vacina'
+    Then vejo uma mensagem de erro informando os campos que estao incorretos

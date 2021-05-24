@@ -75,3 +75,9 @@ end
 Then('vejo uma mensagem de erro informando os campos que estao incorretos') do
     assert_selector('div#error_explanation')
 end
+
+#----------------------------------------
+
+And('clico na opcao de editar o agendamento da vacina {string}') do |string|
+    click_link "e-#{string}"
+end
