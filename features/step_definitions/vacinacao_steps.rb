@@ -69,3 +69,9 @@ end
 When('seleciono o botao de Destroy para o agendamento da vacina {string}') do |string|
     click_link "d-#{string}"
 end
+
+#---------------------------------------
+
+Then('vejo uma mensagem de erro informando os campos que estao incorretos') do
+    assert_selector('div#error_explanation')
+end
