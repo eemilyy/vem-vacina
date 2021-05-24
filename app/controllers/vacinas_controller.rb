@@ -26,7 +26,7 @@ class VacinasController < ApplicationController
 
     respond_to do |format|
       if @vacina.save
-        format.html { redirect_to @vacina, notice: "Vacina was successfully created." }
+        format.html { redirect_to @vacina, notice: "Agendamento criado com sucesso" }
         format.json { render :show, status: :created, location: @vacina }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class VacinasController < ApplicationController
   def update
     respond_to do |format|
       if @vacina.update(vacina_params)
-        format.html { redirect_to @vacina, notice: "Vacina was successfully updated." }
+        format.html { redirect_to @vacina, notice: "Agendamento editado com sucesso" }
         format.json { render :show, status: :ok, location: @vacina }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class VacinasController < ApplicationController
   def destroy
     @vacina.destroy
     respond_to do |format|
-      format.html { redirect_to vacinas_url, notice: "Vacina was successfully destroyed." }
+      format.html { redirect_to vacinas_url, notice: "Agendamento apagado com sucesso" }
       format.json { head :no_content }
     end
   end
