@@ -47,3 +47,25 @@ end
 Then('vejo uma mensagem informando que {string}') do |string|
     expect(page).to have_content(string)
 end
+
+#-----------------------------------
+
+And ('procuro manualmente na pagina de Agendamento Vacinas o nome da vacina e encontro {string}') do |string|
+    click_on 'New Vacina'
+    fill_in 'vacina_nome_vacina', with: string
+    fill_in 'vacina_localizacao', with: 'Rua Doze, 12'
+    select '12', :from => 'vacina_data_3i'
+    select 'June', :from => 'vacina_data_2i'
+    select '2021', :from => 'vacina_data_1i'
+    select '13', :from => 'vacina_horario_4i'
+    select '30', :from => 'vacina_horario_5i'
+    click_on 'Create Vacina'
+    
+    click_link 'Back'
+    
+    expect(page).to have_content(string)
+end
+
+When('seleciono o botao de Destroy para o agendamento da vacina {string}') do |string|
+    click_link "d-#{string}"
+end

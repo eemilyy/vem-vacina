@@ -9,3 +9,9 @@ Feature: Vacinas
     When eu preencho o Nome Vacina 'COVID-19', Localizacao 'Rua Doze, 12', a Data '12'/'June'/'2021' e o Horario '13':'30'
     And clico no botao de 'Create Vacina'
     Then vejo uma mensagem informando que 'Agendamento criado com sucesso'
+
+  Scenario: apagar agendamento de uma vacina
+    Given eu estou logado no sistema Vem Vacina e dentro de Agendamento Vacinas
+    And procuro manualmente na pagina de Agendamento Vacinas o nome da vacina e encontro 'COVID-19'
+    When seleciono o botao de Destroy para o agendamento da vacina 'COVID-19'
+    Then vejo uma mensagem informando que 'Agendamento apagado com sucesso'
